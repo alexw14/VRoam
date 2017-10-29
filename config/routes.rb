@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :users, only: [:new, :create]
   # resources :orders
-  # resources :products
-  # resources :carts
+  resources :products, only: [:index, :show]
+  resources :carts, only: [:index, :show]
   resources :sessions, only: [:new, :create, :destroy]
   get "/login", to: "sessions#new"
 end
