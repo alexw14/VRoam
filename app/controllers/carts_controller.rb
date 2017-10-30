@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
     def index
+        @carts = Cart.find_by(order_id: User.find(current_user.id).orders.last.id)
     end
 
     def show
@@ -11,7 +12,8 @@ class CartsController < ApplicationController
     end
 
     def create
-        @cart = Cart.new
+        @current_order = Order.find_by(is_active: true)
+        @cart = Cart.new(cart_params)
         if @cart.save
             redirect_to products_path
         else
@@ -19,4 +21,9 @@ class CartsController < ApplicationController
         end
     end
 
+    private
+
+    def cart_params
+        params.require(:cart).permit(:product_id)
+    end
 end
