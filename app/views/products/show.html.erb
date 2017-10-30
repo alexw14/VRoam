@@ -2,5 +2,7 @@
     <h1><%= @product.product_name %></h1>
     <p><%= @product.product_description %></p>
     <h2>$<%= @product.price %></h2>
-    <%= %>
+    <%=  form_tag("/add_item/#{@product.id}") do %>
+        <%= submit_tag "Add to Cart" %>
+    <% end %>
 <div class="container-fluid text-center">

@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
     def index
-        @carts = Cart.find_by(order_id: User.find(current_user.id).orders.last.id)
+        @carts = Cart.where(order_id: User.find(current_user.id).orders.last.id)
     end
 
     def show
@@ -20,6 +20,23 @@ class CartsController < ApplicationController
             render :new
         end
     end
+
+    def destroy
+    end
+
+    def add_item
+        @item = Cart.new(order_id: active_order.id, product_id: params[:product_id])
+        if @item.save
+            redirect_to root_path
+        else
+            render :new
+        end
+    end
+
+    def remove_item
+        Cart.find(order_id: active_order.id, product_id: params[:product_id]).destroy
+    end
+
 
     private
 

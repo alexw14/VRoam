@@ -1,2 +1,4 @@
 <h1>Hello carts index</h1>
-<%= @carts.inspect %>
+<% @carts.each do |cart| %>
+    <%= Product.find(cart.product_id).product_name %>
+<% end %>
