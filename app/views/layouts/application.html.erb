@@ -9,7 +9,11 @@
   </head>
 
   <body>
-    <p>
+  <div class="navbar">
+    <div class="navbar-header">
+      <%= link_to "VRoam", root_path, :class => "text-muted" %>
+    </div>
+    <div class="navbar-right">
       <% if current_user %>
         Welcome, <%= current_user.name %>!
         &nbsp;&nbsp; | &nbsp;&nbsp;
@@ -19,7 +23,8 @@
         &nbsp;&nbsp; | &nbsp;&nbsp;
         <%= link_to "Sign Up", new_user_path %>
       <% end %>
-    </p>
-    <%= yield %>
+    </div>
+  </div>
+  <%= yield %>
   </body>
 </html>

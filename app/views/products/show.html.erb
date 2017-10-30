@@ -1,6 +1,8 @@
-<h1><%= @product.product_name %></h1>
-<p><%= @product.product_description %></p>
-<h2>$<%= @product.price %></h2>
-<%= form_tag("/carts", method: "post") do %>
-<%= submit_tag("Add to Cart") %>
-<% end %>
+<div class="container-fluid text-center">
+    <h1><%= @product.product_name %></h1>
+    <p><%= @product.product_description %></p>
+    <h2>$<%= @product.price %></h2>
+    <%= form_tag("/carts", method: "post") do %>
+    <%= submit_tag("Add to Cart") %>
+    <% end %>
+<div class="container-fluid text-center">
