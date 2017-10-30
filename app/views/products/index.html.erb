@@ -1,1 +1,6 @@
-<h1>Hello Products </h1>
+<h1>Top Destination</h1>
+<ul>
+    <% @products.each do |product| %>
+    <li><%= link_to product.product_name, product_path(product) %> </li>
+    <% end %>
+</ul>
