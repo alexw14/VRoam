@@ -6,7 +6,9 @@ class CartsController < ApplicationController
 
     def add_item
         @item = Cart.new(order_id: active_order.id, product_id: params[:product_id])
-        if @item.save
+        if Cart.where("order_id = ? AND product_id = ?", active_order.id, params[:product_id]).exists?
+            redirect_to carts_path
+        elsif @item.save
             redirect_to carts_path 
         else
             render :new
