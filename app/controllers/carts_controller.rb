@@ -27,7 +27,7 @@ class CartsController < ApplicationController
     def add_item
         @item = Cart.new(order_id: active_order.id, product_id: params[:product_id])
         if @item.save
-            redirect_to products_path
+            redirect_to carts_path
         else
             render :new
         end
@@ -35,7 +35,7 @@ class CartsController < ApplicationController
 
     def remove_item
         Cart.find(params[:cart_id]).destroy
-        redirect_to root_path
+        redirect_to carts_path
     end
 
     def purchase

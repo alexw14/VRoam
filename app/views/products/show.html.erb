@@ -2,7 +2,29 @@
     <h1><%= @product.product_name %></h1>
     <p><%= @product.product_description %></p>
     <h2>$<%= @product.price %></h2>
-    <%=  form_tag("/add_item/#{@product.id}") do %>
-        <%= submit_tag "Add to Cart" %>
+    <%= form_tag("/add_item/#{@product.id}") do %>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add to Cart!</button>
+        <%#= submit_tag "Add to Cart" %>
     <% end %>
-<div class="container-fluid text-center">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Success! You have added <%= @product.product_name %> to your cart!</p>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<script>
+    $('form').eq(0).on('click', function(e) {
+        e.preventDefault();
+        setTimeout(function() {
+            document.querySelector('form').submit();
+        }, 2000);
+    });
+</script>

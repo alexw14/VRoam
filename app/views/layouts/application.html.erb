@@ -4,24 +4,37 @@
     <title>VRoam</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <div class="navbar">
-    <div class="navbar-header"><%= link_to "VRoam", root_path, :class => "text-muted" %></div>
+    <div class="navbar-header h3"><%= link_to "VRoam", root_path, :class => "text-muted" %></div>
     <div class="navbar-right">
-      <ul class="list-inline text-right">
-        <% if current_user %>
-          <li class="list-inline-item"> Welcome, <%= current_user.name %>!</li>
-          <li class="list-inline-item"><%= link_to "My Cart", carts_path %></li>
-          <li class="list-inline-item"><%= link_to "Log Out", session_path('dummy'), method: :delete %></li>
-        <% else %>
-          <li class="list-inline-item"><%= link_to "Log In", login_path %></li>
-          <li class="list-inline-item"><%= link_to "Sign Up", new_user_path %></li>
-        <% end %>
-      </ul>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle btn-lg" type="button" data-toggle="dropdown">
+          <% if current_user %>
+            Welcome <%= current_user.name %>!
+          <% else %>
+            Hello, Sign In
+          <% end %>
+        <span class="caret"></span>
+        </button>
+          <ul class="dropdown-menu">
+            <% if current_user %>
+              <li class="dropdown-item"><%= link_to "My Cart", carts_path %></li>
+              <li class="dropdown-item"><%= link_to "My Orders", orders_path %></li>
+              <li class="dropdown-item"><%= link_to "Not #{current_user.name}? Sign Out", session_path('dummy'), method: :delete %></li>
+            <% else %>
+              <li class="dropdown-item"><%= link_to "Log In", login_path %></li>
+              <li class="dropdown-item"><%= link_to "Sign Up", new_user_path %></li>
+            <% end %>
+          </ul>
+      </div>
     </div>
   </div>
   <%= yield %>
