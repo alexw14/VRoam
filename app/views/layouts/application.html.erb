@@ -12,8 +12,8 @@
   </head>
 
   <body>
-  <div class="navbar">
-    <div class="navbar-header h3"><%= link_to "VRoam", root_path, :class => "text-muted" %></div>
+  <nav class="navbar">
+    <div class="navbar-header h2"><%= link_to "VRoam", root_path, :class => "text-muted" %></div>
     <div class="navbar-right">
       <div class="dropdown">
         <button class="btn btn-info dropdown-toggle btn-lg" type="button" data-toggle="dropdown">
@@ -36,7 +36,7 @@
           </ul>
       </div>
     </div>
-  </div>
+  </nav>
   <%= yield %>
   </body>
 </html>

@@ -1,13 +1,5 @@
 class OrdersController < ApplicationController
     def index
-        @orders = Order.all
+        @orders = Order.where(user_id: current_user.id)
     end
-    def new
-        @order = Order.new
-    end
-
-    def create
-        @order = Order.new
-    end
-
 end

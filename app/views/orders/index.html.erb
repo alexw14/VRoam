@@ -1,4 +1,13 @@
-<h1>Hello orders index</h1>
-<% @orders.each do |order| %>
-<%= order %>
-<% end %>
+<div class="container-fluid text-center">
+    <h1>My Order History</h1>
+    <% @orders.each do |order| %>
+        <% Cart.where(order_id: order.id).each do |cart| %>
+            <%= order.created_at.to_s.to_time.strftime('%B %e') %>
+            <%= Product.find(cart.product_id).product_name %>
+            <br>
+        <% end %>
+    <% end %>
+    <%# @orders.each do |order| %>
+    <%#= order %>
+    <%# end %>
+</div>
