@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # Make the current_user method available to views, not just controllers
+  # Make the current_user and active_order method available to views, not just controllers
   helper_method :current_user
   helper_method :active_order
 

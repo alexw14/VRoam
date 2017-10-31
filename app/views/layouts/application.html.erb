@@ -10,19 +10,18 @@
 
   <body>
   <div class="navbar">
-    <div class="navbar-header">
-      <%= link_to "VRoam", root_path, :class => "text-muted" %>
-    </div>
+    <div class="navbar-header"><%= link_to "VRoam", root_path, :class => "text-muted" %></div>
     <div class="navbar-right">
-      <% if current_user %>
-        Welcome, <%= current_user.name %>!
-        &nbsp;&nbsp; | &nbsp;&nbsp;
-        <%= link_to "Log Out", session_path('dummy'), method: :delete %>
-      <% else %>
-        <%= link_to "Log In", login_path %>
-        &nbsp;&nbsp; | &nbsp;&nbsp;
-        <%= link_to "Sign Up", new_user_path %>
-      <% end %>
+      <ul class="list-inline text-right">
+        <% if current_user %>
+          <li class="list-inline-item"> Welcome, <%= current_user.name %>!</li>
+          <li class="list-inline-item"><%= link_to "My Cart", carts_path %></li>
+          <li class="list-inline-item"><%= link_to "Log Out", session_path('dummy'), method: :delete %></li>
+        <% else %>
+          <li class="list-inline-item"><%= link_to "Log In", login_path %></li>
+          <li class="list-inline-item"><%= link_to "Sign Up", new_user_path %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <%= yield %>
