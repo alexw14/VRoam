@@ -2,27 +2,28 @@ class CartsController < ApplicationController
 
     def index
         @carts = Cart.where(order_id: User.find(current_user.id).orders.last.id)
+        # @item = Cart.find(params[:id])
     end
 
-    def show
-    end
+    # def show
+    # end
 
-    def new
-        @cart = Cart.new
-    end
+    # def new
+    #     @cart = Cart.new
+    # end
 
-    def create
-        @current_order = Order.find_by(is_active: true)
-        @cart = Cart.new(cart_params)
-        if @cart.save
-            redirect_to products_path
-        else
-            render :new
-        end
-    end
+    # def create
+    #     @current_order = Order.find_by(is_active: true)
+    #     @cart = Cart.new(cart_params)
+    #     if @cart.save
+    #         redirect_to products_path
+    #     else
+    #         render :new
+    #     end
+    # end
 
-    def destroy
-    end
+    # def destroy
+    # end
 
     def add_item
         @item = Cart.new(order_id: active_order.id, product_id: params[:product_id])
@@ -34,7 +35,8 @@ class CartsController < ApplicationController
     end
 
     def remove_item
-        Cart.find(order_id: active_order.id, product_id: params[:product_id]).destroy
+        Cart.find(params[:cart_id]).destroy
+        redirect_to root_path
     end
 
 

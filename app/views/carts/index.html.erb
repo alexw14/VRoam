@@ -1,4 +1,9 @@
 <h1>Hello carts index</h1>
 <% @carts.each do |cart| %>
-    <%= Product.find(cart.product_id).product_name %>
+    <ul class="list-unstyled">
+        <li><%= Product.find(cart.product_id).product_name %></li>
+        <%=  form_tag("/remove_item/#{cart.id}") do %>
+            <%= submit_tag "Remove" %>
+        <% end %>
+    </ul>
 <% end %>
