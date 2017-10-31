@@ -1,10 +1,6 @@
 class OrdersController < ApplicationController
     def index
-        @orders = User.find(current_user.id).orders
-        
-
-
-
+        @orders = Order.all
     end
     def new
         @order = Order.new

@@ -1,2 +1,4 @@
 <h1>Hello orders index</h1>
-<%= %>
+<%= @orders.each do |order| %>
+<%= order.find_by(user_id: current_user.id) %>
+<% end %>

@@ -2,7 +2,6 @@ class CartsController < ApplicationController
 
     def index
         @carts = Cart.where(order_id: User.find(current_user.id).orders.last.id)
-        # @item = Cart.find(params[:id])
     end
 
     # def show
@@ -39,6 +38,12 @@ class CartsController < ApplicationController
         redirect_to root_path
     end
 
+    def purchase
+        current_user.orders.update(is_active: false)
+        current_user.orders << Order.new(is_active: true)
+        # direct to somewhere else
+        redirect_to root_path
+    end
 
     private
 
