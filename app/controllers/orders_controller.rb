@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
     def index
-        @orders = Order.where(user_id: current_user.id)
+        @orders = Order.where("user_id = ? AND is_active = ?", current_user.id, false)
     end
 end
