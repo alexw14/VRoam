@@ -28,14 +28,33 @@
     color: white;
 }
 .content-1 {
+    height: 600px;
+}
+.content-2 {
     height: 350px;
 }
-#image-container {
+.image-container-1 {
     height: 600px;
 }
 #second-image {
     background-image: url("https://i.imgur.com/w7M9uOo.png");
 }
-.content-2 {
-    height: 550px;
+.card {
+    border: none;
+}
+.card-img-top {
+    height:250px;
+}
+.content-3 {
+    height: 600px;
+}
+#testimonial-image {
+    background-image: url("https://i.imgur.com/DX3HO6i.jpg");
+    color: white;
+}
+.image-container-2 {
+    height: 400px;
+}
+.testimonial {
+    background-color: rgba(1,1,1,0.5)
 }

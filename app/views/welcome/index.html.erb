@@ -5,7 +5,46 @@
             <div class="h1">Travel Aimlessly in Virtual Reality</div>
         </div>
     </div>
+
     <div class="content-1">
+        <div class="h1 py-5 mt-4">Top Experiences in VRoam</div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i.imgur.com/EzlCK0s.jpg">
+                    <div class="card-block">
+                        <div class="card-title h3">Bali, Indonesia</div>
+                        <%= link_to "Explore Now", product_path(@products.find_by(product_name: "Bali, Indonesia").id), :class => "btn btn-primary" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i.imgur.com/wHC6GXq.jpg">
+                    <div class="card-block">
+                        <div class="card-title h3">Paris, France</div>
+                        <%= link_to "Explore Now", product_path(@products.find_by(product_name: "Paris, France").id), :class => "btn btn-primary" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i.imgur.com/EGgCjIC.jpg">
+                    <div class="card-block">
+                        <div class="card-title h3">Rome, Italy</div>
+                        <%= link_to "Explore Now", product_path(@products.find_by(product_name: "Rome, Italy").id), :class => "btn btn-primary" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h3 pt-5"><%= link_to "Explore More Destinations on VRoam!", products_path %></div>
+    </div>
+
+    <div class="image-container-1">
+        <div id="second-image" class="front-page-image"></div>
+    </div>
+
+    <div class="content-2">
         <div class="pt-4 mt-5 h1 col-md-6">About VRoam</div>
         <div class="row pt-4">
             <div class="col-md-4"></div>
@@ -17,43 +56,6 @@
             </div>
         </div>
     </div>
-    <div id="image-container">
-        <div id="second-image" class="front-page-image"></div>
-    </div>
-    <div class="content-2">
-        <div class="h1 py-5 mt-5">Top Experiences in VRoam</div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <img class="card-img-top" style="height:250px;" src="https://i.imgur.com/EzlCK0s.jpg">
-                    <div class="card-block">
-                        <h3 class="card-title">Bali, Indonesia</h3>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <img class="card-img-top" style="height:250px;" src="https://i.imgur.com/wHC6GXq.jpg">
-                    <div class="card-block">
-                        <h3 class="card-title">Paris, France</h3>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <img class="card-img-top" style="height:250px;" src="https://i.imgur.com/EGgCjIC.jpg">
-                    <div class="card-block">
-                        <h3 class="card-title">Rome, Italy</h3>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="content">
-    <div class="h4"><%= link_to "Popular Destinations", products_path %></div>
-    </div>
+
 </div>
