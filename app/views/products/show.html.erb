@@ -13,7 +13,11 @@
         <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>Success! You have added <%= @product.product_name %> to your cart!</p>
+                    <% if Cart.where("order_id = ? AND product_id = ?", active_order.id, @product.id).exists? %>
+                        <p> <%= @product.product_name %> is already in your cart! </p>
+                    <% else %>
+                        <p>Success! You have added <%= @product.product_name %> to your cart!</p>
+                    <% end %>
                 </div>
             </div> 
         </div>
