@@ -1,10 +1,24 @@
 <div class="container-fluid text-center">
-    <h1>My Order History</h1>
-    <% @orders.each do |order| %>
-        <% Cart.where(order_id: order.id).each do |cart| %>
-            <%= order.created_at.to_s.to_time.strftime('%B %d %I:%M %p') %>
-            <%= Product.find(cart.product_id).product_name %>
-            <br>
-        <% end %>
-    <% end %>
+    <div class="container col-sm-6">
+        <div class="h1 my-5">My Order History</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order Date</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @orders.each do |order| %>
+                <% Cart.where(order_id: order.id).each do |cart| %>
+                    <tr>
+                        <td><%= order.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</td>
+                        <td><%= Product.find(cart.product_id).product_name %></td>
+                        <td>$<%= Product.find(cart.product_id).price %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+        </table>
+    </div>
 </div>

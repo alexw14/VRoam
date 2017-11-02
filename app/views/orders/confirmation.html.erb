@@ -1,19 +1,24 @@
 <div class="container-fluid text-center">
-    <div class="container col-sm-8 text-justify">
-        <div>Your VRoam order is confirmed and we are just excited as you are!</div>
-        
-        <div>Your order confirmation number is # <%=current_user.id%>0000<%=@orders.last.id%></div>
+    <div class="container col-sm-8 text-left">
+        <div class="container my-5">
+            <div class="display-4 text-center">Thanks for your order, <%= current_user.name %>!</div>
+        </div>
+        <div class="container my-5 text-center">
+            <div class="h2">Your VRoam order is confirmed </div>
+            <div class="h2">and we are just as excited as you are!</div>
+        </div>
+        <div class="container my-5">
+            <div>Your order confirmation number is # <%=current_user.id%>0000<%=@orders.last.id%></div>
+            <div>Please check your email for everything you need to start your VRoam journey! </div>
+            <div>If you have any questions about your order, please don't hesitate to contact us at <u>customerservice@vroam.com</u></div>
+        </div>
+        <div class="image-container-cf">
+            <div id="cf-image" class="front-page-image"></div>
+        </div>
 
-        <div>Order Date: <%= @orders.last.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</div>
-        <div>Sent to: <%= current_user.email %></div>
-        
-        <div>Please check your email for everything you need to start your VRoam journey! </div>
-
-
-
-        <div>Thanks for your order!</div>
-
-        <div>If you have any questions about your order, please don't hesitate to contact us at <u>customerservice@vroam.com</u></div>
-
+        <div class="container my-5">
+            <div>Order Date: <%= @orders.last.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</div>
+            <div>Sent to: <%= current_user.email %></div>
+        </div>
     </div>
 </div>
