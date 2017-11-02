@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-            <% @orders.each do |order| %>
+            <% @orders.reverse_each do |order| %>
                 <% Cart.where(order_id: order.id).each do |cart| %>
                     <tr>
                         <td><%= order.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</td>
