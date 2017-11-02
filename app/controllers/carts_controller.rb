@@ -2,7 +2,7 @@ class CartsController < ApplicationController
 
     def index
         @carts = Cart.where(order_id: User.find(current_user.id).orders.last.id)
-        
+
         @total = 0
         @carts.each do |cart|
             @total += Product.find(cart.product_id).price
@@ -29,8 +29,7 @@ class CartsController < ApplicationController
     def purchase
         current_user.orders.update(is_active: false)
         current_user.orders << Order.new(is_active: true)
-        # direct to somewhere else
-        redirect_to root_path
+        redirect_to confirmation_path
     end
 
 end
