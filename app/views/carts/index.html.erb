@@ -1,20 +1,25 @@
 <div class="container-fluid text-center">
-    <h1>Shopping Cart</h1>
-    <% @carts.each do |cart| %>
-            <div class="h2"><%= Product.find(cart.product_id).product_name %>
+<div class="container col-sm-8 text-justify">
+    <div class="h1 mb-4">Shopping Cart</div>
+    <div class="container">
+        <% @carts.each do |cart| %>
+            <div class="row form-inline">
+                <div class="h4 my-4 mx-5 col-sm-4"><%= Product.find(cart.product_id).product_name %></div>
+                <div class="h4 my-4 mx-5 col-sm-2">$<%= Product.find(cart.product_id).price %></div>
                 <%= form_tag("/remove_item/#{cart.id}") do %>
-                    <%= submit_tag "Delete", :class => "btn btn-danger" %>
+                    <%= submit_tag "Remove", :class => "btn btn-danger btn-sm" %>
                 <% end %>
             </div>
-    <% end %>
-
+        <% end %>
+    </div>
+    <div id="line" class="my-5"></div>
     <div>
         <%= form_tag("/purchase/active_order") do %>
             <%= submit_tag "Check Out", :class => "btn btn-success" %>
         <% end %>
         <%= link_to "Continue Exploring", products_path, :class => "btn btn-primary"%>
     </div>
-
+</div>
 </div>
 
 

@@ -58,3 +58,7 @@
 .testimonial {
     background-color: rgba(1,1,1,0.5)
 }
+#line {
+    height: 2px;
+    background-color: black;
+}

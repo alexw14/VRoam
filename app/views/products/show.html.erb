@@ -5,7 +5,7 @@
     <div class="container d-flex">
         <div class="h3 mr-5 pt-2">$<%= @product.price %> / 60 mins</div>
         <%= form_tag("/add_item/#{@product.id}") do %>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add to Cart</button>
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Add to Cart</button>
         <% end %>
         <%= link_to "Back to Explore", products_path, :class => "btn btn-primary btn-lg ml-5"%>
     </div>
