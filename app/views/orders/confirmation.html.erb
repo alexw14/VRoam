@@ -1,9 +1,19 @@
 <div class="container-fluid text-center">
-    <div class="container col-sm-6 text-justify">
+    <div class="container col-sm-8 text-justify">
+        <div>Your VRoam order is confirmed and we are just excited as you are!</div>
+        
+        <div>Your order confirmation number is # <%=current_user.id%>0000<%=@orders.last.id%></div>
+
+        <div>Order Date: <%= @orders.last.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</div>
+        <div>Sent to: <%= current_user.email %></div>
+        
+        <div>Please check your email for everything you need to start your VRoam journey! </div>
 
 
 
+        <div>Thanks for your order!</div>
 
-    
+        <div>If you have any questions about your order, please don't hesitate to contact us at <u>customerservice@vroam.com</u></div>
+
     </div>
 </div>
