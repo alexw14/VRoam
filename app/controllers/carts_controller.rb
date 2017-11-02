@@ -2,6 +2,12 @@ class CartsController < ApplicationController
 
     def index
         @carts = Cart.where(order_id: User.find(current_user.id).orders.last.id)
+        
+        @total = 0
+        @carts.each do |cart|
+            @total += Product.find(cart.product_id).price
+        end
+
     end
 
     def add_item

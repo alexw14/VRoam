@@ -13,6 +13,9 @@
         <% end %>
     </div>
     <div id="line" class="my-5"></div>
+
+    <%= @total %>
+
     <div>
         <%= form_tag("/purchase/active_order") do %>
             <%= submit_tag "Check Out", :class => "btn btn-success" %>
