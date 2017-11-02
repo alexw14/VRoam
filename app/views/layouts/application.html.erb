@@ -27,7 +27,7 @@
           <ul class="dropdown-menu">
             <% if current_user %>
               <li class="dropdown-item"><%= link_to "My Account", edit_user_path(current_user.id) %></li>
-              <li class="dropdown-item"><%= link_to "My Cart", carts_path %></li>
+              <li class="dropdown-item"><%= link_to "My Cart (#{Cart.where(order_id: active_order.id).count})", carts_path %></li>
               <li class="dropdown-item"><%= link_to "My Orders", orders_path %></li>
               <li class="dropdown-item"><%= link_to "Not #{current_user.name}? Sign Out", session_path('dummy'), method: :delete %></li>
             <% else %>

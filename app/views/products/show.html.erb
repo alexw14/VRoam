@@ -1,12 +1,14 @@
 <div class="container-fluid text-center">
-    <h1><%= @product.product_name %></h1>
-    <p><%= @product.product_description %></p>
-    <h4>$<%= @product.price %> / 60 mins</h2>
-    <%= form_tag("/add_item/#{@product.id}") do %>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add to Cart!</button>
-        <%#= submit_tag "Add to Cart" %>
-    <% end %>
-
+    <div class="container col-sm-6 text-justify">
+    <div class="h1"><%= @product.product_name %></div>
+    <div class="py-5"><%= @product.product_description %></div>
+    <div class="container d-flex">
+        <div class="h3 mr-5 pt-2">$<%= @product.price %> / 60 mins</div>
+        <%= form_tag("/add_item/#{@product.id}") do %>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add to Cart</button>
+        <% end %>
+        <%= link_to "Back to Explore", products_path, :class => "btn btn-primary btn-lg ml-5"%>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -14,9 +16,9 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <% if Cart.where("order_id = ? AND product_id = ?", active_order.id, @product.id).exists? %>
-                        <p> <%= @product.product_name %> is already in your cart! </p>
+                        <p class="text-center"> <%= @product.product_name %> is already in your cart! </p>
                     <% else %>
-                        <p>Success! You have added <%= @product.product_name %> to your cart!</p>
+                        <p class="text-center">Success! You have added <%= @product.product_name %> to your cart!</p>
                     <% end %>
                 </div>
             </div> 
