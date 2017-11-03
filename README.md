@@ -1,5 +1,7 @@
 # VRoam
-VRoam is a concept e-commerce full-stack application built with Ruby on Rails. I made this full-stack CRUD app with a concept of a shopping cart for my second project of General Assembly's Web Development Immersive Program.
+VRoam is a concept e-commerce full-stack application built with Ruby on Rails. I made this full-stack CRUD app with a concept of a shopping cart for my second project of General Assembly's Web Development Immersive Program. The project is deployed on Heroku.
+
+Visit here: https://obscure-citadel-33199.herokuapp.com/
 
 ## About
 VRoam is my first Ruby on Rails project. It has a user model, order model, product model, and cart model. It includes a sign up/log in functionality and a shopping cart that stores items. 
