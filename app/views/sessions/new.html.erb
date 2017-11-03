@@ -1,11 +1,11 @@
 <div class="container-fluid text-center">
+    <div class="h2" id="alert"><%= alert %></div>
     <div class="image-container-login">
         <div id="login-image" class="front-page-image">
             <div class="outer-container">
                 <div class="login-container ml-5">
                     <div class="h1 text-left ml-5 pl-5" style="color: white;">Log In</div>
                     <div class="text-left ml-5 pl-5" style="color: white;">
-                        <p id="alert"><%= alert %></p>
                         <%= form_tag sessions_path do %>
                         <div class="h4">
                             <%= label_tag :email %>

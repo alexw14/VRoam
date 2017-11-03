@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   post "add_item/:product_id", to: "carts#add_item"
   post "remove_item/:cart_id", to: "carts#remove_item"
   post "purchase/:order_id", to: "carts#purchase"
-
 end

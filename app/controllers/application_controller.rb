@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     @active_order = current_user.orders.find_by(is_active: true)
   end
 
+  def authorize
+    redirect_to login_path, alert: "You must be logged in to view this page!" if current_user.nil?
+  end
+
 end
