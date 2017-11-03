@@ -9,7 +9,7 @@
                 <div class="h2">Your Shopping Cart is empty.</div>
             <% else %>
                 <% @carts.each do |cart| %>
-                    <div class="row form-inline">
+                    <div class="row form-inline text-left">
                         <div class="h4 my-4 mx-5 col-sm-4"><%= Product.find(cart.product_id).product_name %></div>
                         <div class="h4 my-4 mx-5 col-sm-2">$<%= Product.find(cart.product_id).price %></div>
                         <%= form_tag("/remove_item/#{cart.id}") do %>
@@ -20,7 +20,7 @@
             <% end %>
             <div id="line" class="my-5"></div>
             <div class="text-right">
-                <div class="h3 mr-5">Subtotal: $<%= @total %></div>
+                <div class="h3 mr-5">Subtotal: $<%= @total.round(2) %></div>
             </div>
         </div>
         <div class="container">
