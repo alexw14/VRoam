@@ -20,5 +20,8 @@
             <div>Order Date: <%= @orders.last.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</div>
             <div>Sent to: <%= current_user.email %></div>
         </div>
+        <div class="container text-center mb-5">
+            <%= link_to "Back to Home", root_path, :class => "btn btn-primary btn-lg ml-5"%>
+        </div>
     </div>
 </div>

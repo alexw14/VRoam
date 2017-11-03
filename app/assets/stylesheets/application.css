@@ -61,3 +61,18 @@
 #cf-image {
     background-image: url("https://i.imgur.com/fltBIJo.jpg");
 }
+.image-container-login {
+    height: 800px;
+}
+#login-image {
+    background-image: url("https://i.imgur.com/DX3HO6i.jpg");
+}
+.outer-container{
+    margin-left: 100px;
+}
+.login-container {
+    background-color: rgba(1,1,1,0.5);
+    padding-top: 50px;
+    width: 400px;
+    height: 500px;
+}
