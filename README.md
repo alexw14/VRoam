@@ -7,7 +7,7 @@ VRoam is my first Ruby on Rails project. It has a user model, order model, produ
 ## The Design
 The project's user stories are documented and managed on Trello, which can be found here: https://trello.com/b/XxhflO3c/vroam
 
-<img src"https://i.imgur.com/VfN1iXz.jpg">
+<img src="https://i.imgur.com/VfN1iXz.jpg">
 <img src="https://i.imgur.com/JbnVZZE.jpg">
 <img src="https://i.imgur.com/QUEK4x9.png">
 
