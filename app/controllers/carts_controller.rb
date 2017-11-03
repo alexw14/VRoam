@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+    before_action :authorize
 
     def index
         @carts = Cart.where(order_id: User.find(current_user.id).orders.last.id)

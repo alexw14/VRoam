@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-    def index
-        @users = User.all
-    end
 
     def new
         # Provide the model instance to the form_for helper
