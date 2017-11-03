@@ -15,7 +15,6 @@
         <div class="image-container-cf">
             <div id="cf-image" class="front-page-image"></div>
         </div>
-
         <div class="container my-5">
             <div>Order Date: <%= @orders.last.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</div>
             <div>Sent to: <%= current_user.email %></div>

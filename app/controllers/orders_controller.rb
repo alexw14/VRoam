@@ -8,5 +8,4 @@ class OrdersController < ApplicationController
     def confirmation
         @orders = Order.where("user_id = ? AND is_active = ?", current_user.id, false)
     end
-
 end

@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-
     def new
-        # Provide the model instance to the form_for helper
         @user = User.new
     end
 
@@ -9,7 +7,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            current_user.orders << Order.new(is_active: true)
+            current_user.orders << Order.new(is_active: true) # Create an active order for a user that just created an account
             flash[:notice] = "Thank you for signing up!"
             redirect_to root_path
         else

@@ -28,6 +28,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <!-- Product description -->
     <div class="py-4"><%= @product.product_description %></div>
     <div class="container d-flex justify-content-center">
         <div class="h3 mr-5 pt-2">$<%= @product.price %> / 60 mins</div>
@@ -53,6 +54,7 @@
         </div>
     </div>
 </div>
+<!-- Allow the Add to Cart button to first prompt the modal and then submit -->
 <script>
     $('form').eq(0).on('click', function(e) {
         e.preventDefault();
