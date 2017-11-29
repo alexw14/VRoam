@@ -11,22 +11,14 @@
             </thead>
             <tbody>
             <% @orders.reverse_each do |order| %>
-                <% Cart.where(order_id: order.id).reverse_each do |cart| %>
+                <% order.carts.reverse_each do |cart| %>
                     <tr>
                         <td><%= order.updated_at.to_s.to_time.strftime('%B %d %I:%M %p') %> (UTC)</td>
-                        <td><%= Product.find(cart.product_id).product_name %></td>
-                        <td>$<%= Product.find(cart.product_id).price %></td>
+                        <td><%= cart.product.product_name %></td>
+                        <td>$<%= cart.product.price %></td>
                     </tr>
                 <% end %>
             <% end %>
         </table>
     </div>
 </div>
-
-<!--
-@orders.each do |order|
-
-    order.products.each do |product| 
-
-        <%= product.product_name %>
--->
