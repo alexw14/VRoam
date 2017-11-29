@@ -44,7 +44,7 @@
         <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <% if Cart.where("order_id = ? AND product_id = ?", active_order.id, @product.id).exists? %>
+                    <% if is_product_in_cart(@product) %>
                         <p class="text-center"> <%= @product.product_name %> is already in your cart! </p>
                     <% else %>
                         <p class="text-center">Success! You have added <%= @product.product_name %> to your cart!</p>
